@@ -373,5 +373,176 @@ footer{
   color: black;
 }
 
+#logout{
+    text-decoration: none;
+    color: white;
+}
 
+
+/*dropdown*/
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown content when the dropbtn is hovered */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*menu design*/
+#menu{
+    background:transparent;
+    border: none;
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: auto;
+    margin-right: 5vh;
+    font-weight: bold;
+    height: 5vh;
+}
+#plus{
+    background-color: black;
+    height: 100vh;
+}
+#taskadd{
+    margin:0;
+    padding-left: 47vw;
+    padding-top: 25vw;
+    width: 20vh;
+    height: 20vh;
+    align-items: center !important;
+}
+#plusbutton{
+    background-color: transparent;
+    border-radius: 50vh;
+    width: 20vh !important;
+    border: none;
+}
+#home a{
+    color: white !important;
+    font-weight: bold !important;
+}
+
+
+
+/* About page design */
+#one4{
+    background-color: black;
+}
+.content{
+    background-color: black;
+    color: #c81eee;
+    font-weight: 500;
+    padding-left: 3rem;
+}
+.highlight{
+    color:white;
+  @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+  font-family: 'Tilt Prism', cursive; 
+    /* font-family: 'Pacifico', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Tilt Prism', cursive; */
+  /* @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,700;0,800;1,100;1,200;1,300;1,600;1,700&family=Tilt+Prism&display=swap') !important; */
+}
+/* Add your custom CSS styles */
+ .one8 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Add a background color to create contrast */
+.one8 {
+    background-color: rgb(195, 0, 255);
+    padding: 10px;
+    border-radius: 5px;
+    color: white !important;
+    margin-bottom: 20rem;
+    font-size: larger;
+    align-content: center;
+}
+
+/* Add a subtle box shadow for depth */
+.one8{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a slight animation on hover */
+.one8:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.one89{
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px !important;
+    padding: 5px 0 5px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.one89{
+    background-color: rgb(195, 0, 255);
+    padding: 10px;
+    border-radius: 5px;
+    color: white !important;
+    margin-bottom: 20rem;
+    font-size: larger;
+    align-content: center;
+}
+.one89{
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.ull li{
+    padding: 5px 5px 5px 5px;
+    font-size: large;
+}
+.one89:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+.whit{
+    color: white;
+    font-weight: bold;
+}
+
+.one1 ul {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px !important;
+    padding: 5px ;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.ulll li{
+    padding: 10px 10px 10px 10px;
+    font-size: large;
+}
 

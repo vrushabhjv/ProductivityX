@@ -6,6 +6,8 @@
     <meta name="author" content="Productivity">
     <title>ProductivityX</title>
     <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="main-container">
@@ -16,13 +18,19 @@
                 </div>
                 <nav>
                     <ul>
-                        <li class="current"><a href="indexhome.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="benefits.html">Benefits</a></li>
+                        <li class="current" id="home"><a>Home</a></li>
                     </ul>
                 </nav>
             </div>
+            <div class="dropdown" id="container1">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="menu">
+                  MENU
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item active" href="indexlog.html">Task</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </div>
         </header>
 
         <section id="showcase">
@@ -35,7 +43,7 @@
                 <h1>Supercharge Your Efficiency with Cloud Task Management</h1>
                 <p>Welcome to Productivity<span class="highlight">X</span>, where efficiency meets simplicity. Seamlessly manage your tasks in the cloud, prioritize with ease, and stay ahead of deadlines. Embrace a new level of productivity and take charge of your goals. Let's conquer tasks together!</p>
                 <!-- <button type="submit" class="SignUp-logIn" action="" >Sign Up</button> -->
-                <button class="SignUp-logIn" id="show-login" onclick="showlogin()">Log In</button>
+                <button class="SignUp-logIn" id="show-login" onclick="showlogin()"><a href="indexhome.html" id="logout">Log out</a></button>
         </section>
 
         <section id="newsletter">
@@ -66,30 +74,6 @@
                 <p>ProductivityX, Copyright <span>&copy</span>; 2023</p>
             </div>
         </footer>
-    </div>
-    <div class="popup">
-        <div class="close-btn">&times;</div>
-        <div class="form">
-            <h2>Log In</h2>
-            <div class="form-element">
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter Email-id">
-            </div>
-            <div class="form-element">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter password">
-            </div>
-            <div class="form-element" id="remember">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember Me</label>
-            </div>
-            <div class="form-element">
-                <button class="one1"><a href="afterlogin.html" id="one1" onclick="aftersignin()">Sign Up</a></button>
-            </div>
-            <div class="form-element">
-                <a href="#">Forgot password</a>
-            </div>
-        </div>
     </div>
     <script src="test.js"></script>
     

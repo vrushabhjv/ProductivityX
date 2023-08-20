@@ -1,50 +1,101 @@
-document.querySelector("#plusbutton").addEventListener("click", function() {
+document.querySelector("#plusbutton").addEventListener("click", function () {
     console.log("Inside");
     document.querySelector(".popup").classList.add("active");
     document.querySelector("#main-container").classList.add("blurred");
 });
+
 document.querySelector(".popup .close-btn").addEventListener("click", function () {
-  document.querySelector(".popup").classList.remove("active");
-  document.querySelector("#main-container").classList.remove("blurred");
+    document.querySelector(".popup").classList.remove("active");
+    document.querySelector("#main-container").classList.remove("blurred");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let editedTaskId = null;
 
+    document.getElementById("task-table").addEventListener("click", function (event) {
+        const target = event.target;
+        if (target.classList.contains("edit-button")) {
+            const row = target.closest("tr");
+            editedTaskId = row.dataset.taskId;
 
-document.getElementById("createTask").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    
-    // Get values from inputs
-    const taskName = document.getElementById("Taskname").value;
-    const startTime = document.getElementById("Starttime").value;
-    const endTime = document.getElementById("Stoptime").value;
-    const priority = document.getElementById("priority").value;
-    
-    // Log the values to the console (for testing)
-    console.log("Task Name:", taskName);
-    console.log("Start Time:", startTime);
-    console.log("End Time:", endTime);
-    console.log("Priority:", priority);
-    
-    // Clear the form inputs
-    document.getElementById("Taskname").value = "";
-    document.getElementById("Starttime").value = "";
-    document.getElementById("Stoptime").value = "";
-    document.getElementById("priority").value = "";
-})
+            const cells = row.getElementsByTagName("td");
+            const taskName = cells[0].textContent;
+            const startTime = cells[1].textContent;
+            const stopTime = cells[2].textContent;
+            const priority = cells[3].textContent;
 
+            document.getElementById("Taskname").value = taskName;
+            document.getElementById("Starttime").value = startTime;
+            document.getElementById("Stoptime").value = stopTime;
+            document.getElementById("priority").value = priority;
 
-document.getElementById("createTask").addEventListener("click", function() {
-    // Gather input values
-    const taskName = document.getElementById("Taskname").value;
-    const startTime = document.getElementById("Starttime").value;
-    const stopTime = document.getElementById("Stoptime").value;
-    const priority = document.getElementById("priority").value;
+            document.getElementById("createTask").textContent = "Update Task";
 
-    // Create a new row for the table
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `<td>${taskName}</td><td>${startTime}</td><td>${stopTime}</td><td>${priority}</td>`;
+            document.querySelector(".popup").classList.add("active");
+            document.querySelector("#main-container").classList.add("blurred");
+        }
+    });
 
-    // Append the new row to the table body
-    const tableBody = document.querySelector("#task-table tbody");
-    tableBody.appendChild(newRow);
+    document.getElementById("createTask").addEventListener("click", async function () {
+        const taskName = document.getElementById("Taskname").value;
+        const startTime = document.getElementById("Starttime").value;
+        const stopTime = document.getElementById("Stoptime").value;
+        const priority = document.getElementById("priority").value;
+
+        try {
+            let response;
+            if (!editedTaskId) {
+                // Create a new task on the server
+                response = await fetch('http://localhost:3000/create-task', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ taskName, startTime, endTime: stopTime, priority })
+                });
+            } else {
+                // Update an existing task on the server using the correct _id
+                response = await fetch(`http://localhost:3000/update-task/${editedTaskId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ taskName, startTime, endTime: stopTime, priority })
+                });
+            }
+
+            if (response.ok) {
+                if (!editedTaskId) {
+                    const newRow = document.createElement("tr");
+                    newRow.dataset.taskId = response._id; // Assuming the server sends back the new task's _id
+                    newRow.innerHTML = `<td>${taskName}</td><td>${startTime}</td><td>${stopTime}</td><td>${priority}</td><td><button class="edit-button">Edit</button></td>`;
+                    document.getElementById("task-table").appendChild(newRow);
+                } else {
+                    const tableRow = document.querySelectorAll("#task-table tr")[editedRowIndex];
+                    const cells = tableRow.getElementsByTagName("td");
+                    cells[0].textContent = taskName;
+                    cells[1].textContent = startTime;
+                    cells[2].textContent = stopTime;
+                    cells[3].textContent = priority;
+
+                    document.getElementById("createTask").textContent = "Create Task";
+
+                    editedRowIndex = -1;
+                }
+
+                document.getElementById("Taskname").value = "";
+                document.getElementById("Starttime").value = "";
+                document.getElementById("Stoptime").value = "";
+                document.getElementById("priority").value = "";
+                alert("Task is successfully " + (!editedTaskId ? "created" : "updated"));
+            } else {
+                alert("Error " + (!editedTaskId ? "creating" : "updating") + " task");
+            }
+
+            editedTaskId = null;
+        } catch (error) {
+            console.error('Error ' + (!editedTaskId ? "creating" : "updating") + ' task:', error);
+            alert("An error occurred while " + (!editedTaskId ? "creating" : "updating") + " the task");
+        }
+    });
 });

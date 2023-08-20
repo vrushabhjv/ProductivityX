@@ -10,7 +10,7 @@ body{
     padding: 0;
     margin: 0;
     font-size: 15px;
-    background: lightgray;
+    background: black;
     line-height: 1.5;
     cursor: url(data:image/png;base64,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),auto!important;
 }
@@ -165,7 +165,7 @@ header a:hover{
 }
 #plus{
     background-color: black;
-    height: 100vh;
+    height: 150vh;
 }
 #taskadd{
     margin:0;
@@ -188,7 +188,7 @@ header a:hover{
 /*Task Creation*/
  .popup {
     position: absolute;
-    margin-top: -30%;
+    margin-top: -50%;
     margin-left: 50%;
     margin-bottom: -50%;
     transform: translate(-50%, -50%);
@@ -275,6 +275,41 @@ header a:hover{
     cursor: pointer;
 }
 #createTask{
-    background-color:rgb(200,30,238)  ;
+    background-color:rgb(200,30,238)   ;
+}
+
+
+/*table design*/
+#table-container {
+    margin-bottom: 20px;
+    
+}
+section #plus{
+    height: auto;
+}
+
+#task-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid rgb(200,30,238);
+    background-color: black;
+    color: white !important;
+}
+
+#task-table th,
+#task-table td {
+    padding: 8px;
+    border: 3px solid black;
+    background-color:rgb(200,30,238);
+    text-align: center;
+}
+
+#task-table th {
+    background-color: rgb(200,30,238);
+    font-weight: bold;
+}
+
+#task-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
