@@ -5,30 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./css2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="main-container">
         <header>
-            <div class="container">
+            <div class="container" id="container">
                 <div id="branding">
                     <h1 id="middle">Productivity<span class="highlight">X</span></h1>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="indexhome.html">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropbtn">Menu</a>
-                            <div class="dropdown-content">
-                                <a href="#">Task</a>
-                                <a href="indexhome.html">Home</a>
-                            </div>
-                        </li>
                     </ul>
                 </nav>
             </div>
+            <div class="dropdown" id="container1">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="menu">
+                  Menu
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item active" href="#">Task</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </div>
         </header>
+        <section id="plus">
+            <div class="add" id="taskadd">
+               <button id="plusbutton" class="taskadd"> <img src="./images/add.png" alt="none" height="100rem" width="100rem"></button>  
+            </div>
+            <div class="popup1">
+                <!-- Your form content here -->
+            
+                <div id="table-container">
+                    <table id="task-table">
+                        <thead>
+                            <tr>
+                                <th>Task Name</th>
+                                <th>Start Time</th>
+                                <th>Stop Time</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be added dynamically here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </section>
     </div>
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+        <div class="form" id="task-form" >
+            <h2>Task Creation</h2>
+            <div class="form-element">
+                <label for="text">Task Name</label>
+                <input type="text" id="Taskname" placeholder="Enter Task Name">
+            </div>
+            <div class="form-element">
+                <label for="text">Start Time</label>
+                <input type="text" id="Starttime" placeholder="Enter Start Time">
+            </div>
+            <div class="form-element">
+                <label for="text">Stop Time</label>
+                <input type="text" id="Stoptime" placeholder="Enter Stop Time">
+            </div>
+            <div class="form-element">
+                <label for="text">Priority</label>
+                <input type="text" id="priority" placeholder="Enter Priority">
+            </div>
+            <div class="form-element">
+                <button id="createTask">Create Task</button>
+            </div>
+        </div>
+    </div>
+    
 </body>
 <script src="test1.js"></script>
 </html>

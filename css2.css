@@ -1,3 +1,111 @@
+*{
+    
+    cursor: url(data:image/png;base64,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),auto!important;
+}
+input {
+    caret-color: red;
+  }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    background: lightgray;
+    line-height: 1.5;
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAiCAYAAABIiGl0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH5wQCCy4V8pPt9wAAB3pJREFUWMOtlmtsHNUVx3/nzszO7uyu366dmJgQ4kcICJKQovBoAfUD9EO/+ENVVQWpiFZKq0oRSIVCi4AgAVJTkAD1pValQCJIUkEQSlFTVAQkSuqUEEIweZLEsbHXduz1PmZn595+mLHXDoZSyJFW2j1z7/zuedz/WeE86+s7yLZt75DNXLLGr0x+LwzlJmN0i+uaO0sl+/UrrzrHgXfv4ILb5Zcd5cd3Gkk4g3+GNwxsM7DdWNbWf2cyW3oTzovceOOzX5mjzneMTaR4ZcdgJtStPXA5kAYMYajWlEv2plSq2rZvb+LCg4tFl1I52WoMF0EzsBJIAIZqKLcUS85GL60zDfVbLiy4XE4QBHanMdIceRYDvYAFIEGgbp+ctO9qbAzs1pbNFwZszF5836NatbuMES/yCrAUWBZ/xwkC6+6hoeTtu/7xKh0df/3q4OuvTwMW2qgVEcTETyygG+iID0imUpGN16z7zq2Dg2mWX/r/w+eBhwbT9HQNJIyW7ggcAqPxARJE9W4FQBvV7vvWpky6svrY8RQ33/SHLw+ezHvkxpoatLGWRp4iwlbgaJxmD7gCqAMMWktvqWw/kc1WL35ndz333PvYlwOXyy6VILHYaGmPQHkMA8CLwHC8qp7omiUBCEO5oVi0HvfSQeMzT3d+WbBDtaouMUh95MkBPnACy/rboFLVXORvAy4DbACqVdWXn0rc73nabWr8Yp0+C/7J+n7CMIXWqhcj0RsZBgJAUKp/u+tWfikSFqNnS4CumVdY1UCtn5hIrO/umlaL2p//4uB/vZnhwYcfklBbvZFHx2ATg+WD2+5I/85xKk+CrkZblwNReg0kKxV1/4H36vuGhttYtvTz4dbMF1H3sG/fqkyxkPmZMVYnVIB/AjlEVMlJyFP/6e8/Xld3xb4gcDq1tq6MtjcBeWAaIKW1rE2lCv0jo+6plStvYXT05c+PuFxKUS55rcbIkpnGgnFAQBi3LfnYsYcoFlNT6fT0vbZd2RVlw42brTHKk5alvm89kc0EPUeOpLnxhuf/B7jsEgTOHKmciKMQFJxJJtWIl1KsXnWY6UJqMJUqbrCs4GAEzxJdszQAYShrSiVrk+eFbfv22xizYWHwgQNv4PspdGh1GaOi3YzGHQ2iOLZ2bXa6qTnJW2+to7f7FPl808GkW96gVHgmWj93oEA1lFsLBXuj54XpxoZrFgbfdXc7oNBGemuPhomUC5Tiw9deG9Fdy5sAeP/QSpZefIJCsX5XIlG+VyScjPYsNFCcuxubKnZrywufBh/5yKOre8DRWvVE9Q2oCQahUgwosdnx6q9mN578eBnti05zadfRzYlE+VGRsLLwQFF3DQ0lbxsZ3UJHx3PzwfnpFGO5pgat1dLIXSISD0FEpixLjrlJ+VS6hoc6OTu4OGxonHjSdvw/gtYLDJRsxVcbPe/7twwOZlnR+2wNXC4nqFScRcbMSOUUMBmDGXEcddZ1LRayifF2CgWvlMnkH7Cdyo75nT47UBZFA6W0amDA44brfh+B/XKCMLSWGTNXKiOBEuFkQ709ns06fJblp5oplzK5TLq6wbaCPVHGCkRDJRqvWsuKUtl+IpOpdu7rr8e+7+cHeOSxFFqXekCcWmPNSCVHTn58yr/22pWcPj0fuGbNX/haa0Bb25Y6y1KXlsusQeqDKN3F2eaMTAhD+UaxZD+azfJT+7W/e7yy/Q76vvvMHKn8hDlSeRhaWHFZO+2tT7P95fV0XPRCMj9lLTl0SK16L/Su01q+rrV0GUMjFNRcWK2VNFAhDPN9peL4m/bQsMeP1j+Y0VqWRwt9YGQmzSXLMgPG/InGxi0dvq8uTyS2rhsectcZw0qtpQ2wa4C5QBNnrRj3ywQwiTElRxvdYBdLLgItNamcZlYqsYMwXP1tx9l2p9bOamPkImNIfTYoBMpxc04A5+JaB3HEEgcjh22/nMSywiXGSEvcp0Q6DcZksr7fsAHUp+8SEr/Mj9efm7PXnwXNXy9IpPtHbd93cZPl5cao+F9lTSrBk5lhX4uqEkcxA5qKowxn+2J+faMoRTitFAdsW3amPI7bYGNCq7e2ckYqFZCJTz6/TtHv4DxQLSogUMKIKN63LNlt2+xOJORQa4vzyekz1eqvH/Wwe3o+Shw7dnEslVVqUinAWPyZjiNdKH3RVRCRCaX4SCn2Wpa87Tjybl2dc3pw8OlyX98jbN58H+fORYt/8EOQluah5vGJ5p1a21dHgE3AqThis0BUUflFpCDCSaXotyzeDsNwbzLJ8Ztv7syfOTPF/v2/iQo3OopSCq117bgi2Ol0Pn9usuFDrZ2r50rl+VEJ4ovirFK8p5S8Y9vscZPWh21tVu7wB0/pSqWw2BgTuq5HLjcO/EJmIFprc/7JxXXzJNxKd7FQ91wYvr8WfhunXAIRckpx2LLYY1my202og41NibMnTowH9z94NRsf2EAulwNQxphvAoeYEYEFzBhDU1MTY2NjyOqrDrH/3eV4nv6W77/+nDE7tKV427Jll+PInmzWPvrQw93TW186y86dj3Oh7L/1MinXVes/AAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wNC0wMlQxMTo0NjoyMSswMDowMEIg1MwAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDQtMDJUMTE6NDY6MjErMDA6MDAzfWxwAAAAAElFTkSuQmCC),auto!important;
+}
+
+/*Global*/
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+#main-container.blurred {
+    filter: blur(5px); /* Adjust the blur amount as per your preference */
+    pointer-events: none; /* Prevent clicks on blurred elements */
+}
+ul{
+    margin: 0;
+    padding: 0;
+
+}
+
+button{
+    height: 25px;
+    background: orangered;
+    color: white;
+    padding: 0 20px 0 20px;
+}
+
+/*Header*/
+header{
+    /*background: #35424a;*/
+    background: rgb(200,30,238) !important;
+    background: radial-gradient(circle, rgba(200,30,238,1) 0%, rgba(0,0,0,1) 83%) !important;
+    color: white;
+    padding-top: 0;
+    min-height: 100px;
+    border-bottom:rgb(238, 36, 36) 3px solid;
+    align-items: center;
+    display: flex;
+}
+
+header a{
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+
+header li{
+    padding: 0 10px 0 10px;
+    display: inline;
+    float: left;
+    margin: 0;
+}
+
+header #branding{
+    float: left;
+}
+header #branding h1{
+    margin: 0;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+nav{
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight{
+    color: white;
+    font-size: 40px;
+
+}
+#highlightx{
+    color: white;
+    font-size: 40px;
+
+}
+
+header .current a{
+   color: black;
+    font-weight: bold;
+}
+
+header a:hover{
+    background: -webkit-linear-gradient(rgb(238, 36, 36), hsl(12, 80%, 47%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
 #middle{
     text-align: center;
 }/*after log in page*/
@@ -6,6 +114,10 @@
     position: relative;
     display: inline-block;
 }
+
+
+
+
 
 .dropbtn {
     background-color: #333;
@@ -39,3 +151,130 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+/*menu design*/
+#menu{
+    background:transparent;
+    border: none;
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: auto;
+    margin-right: 5vh;
+    font-weight: bold;
+    height: 5vh;
+}
+#plus{
+    background-color: black;
+    height: 100vh;
+}
+#taskadd{
+    margin:0;
+    padding-left: 47vw;
+    padding-top: 25vw;
+    width: 20vh;
+    height: 20vh;
+    align-items: center !important;
+}
+#plusbutton{
+    background-color: transparent;
+    border-radius: 50vh;
+    width: 20vh !important;
+    border: none;
+}
+
+
+
+
+/*Task Creation*/
+ .popup {
+    position: absolute;
+    margin-top: -30%;
+    margin-left: 50%;
+    margin-bottom: -50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-align: left;
+    display: none; 
+} 
+
+.popup.active {
+    opacity: 1;
+    display: inline !important;
+    transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out, transform 20ms ease-in-out;
+}
+
+
+.popup .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    padding-bottom: 15px;
+    align-items: center;
+    background-color: #888;
+    color: #eee;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 17px;
+    cursor: pointer;
+}
+.popup .form h2{
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup .form .form-element{
+    margin: 15px ;
+}
+
+.popup .form .form-element label{
+    font-size: 15px;
+    color: #222;
+}
+
+.popup .form .form-element input[type="text"] {
+    margin: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+
+}
+
+/* .popup .form .form-element input[type="text"]{
+    margin: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup .form .form-element input[type="text"]{
+    margin: 5px;
+    cursor: pointer;
+} */
+.popup .form .form-element button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#createTask{
+    background-color:rgb(200,30,238)  ;
+}
+
