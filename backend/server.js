@@ -60,7 +60,7 @@ app.put('/update-task/:id', async (req, res) => {
         const updatedTaskData = req.body;
 
         // Convert the taskId to a mongoose ObjectId
-        const mongooseTaskId = mongoose.Types.ObjectId(taskId);
+        const mongooseTaskId =new mongoose.Types.ObjectId(taskId);
 
         // Find the task by ID and update it
         const updatedTask = await Task.findByIdAndUpdate(mongooseTaskId, updatedTaskData, { new: true });
