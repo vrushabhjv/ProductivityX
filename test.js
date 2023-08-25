@@ -16,6 +16,6 @@ document.querySelector("#show-login").addEventListener("click", function () {
     window.location.href = "afterlogin.html";
     console.log("Inside fetchTasksAnd PopulateTable function")
     // Fetch tasks from the server
-    //fetchTasks();
+    fetchTasks();
 }
 
