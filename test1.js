@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             } else {
                 // Update an existing task on the server using the correct _id
+                console.log("edited task",editedTaskId)
                 response = await fetch(`http://localhost:3000/update-task/${editedTaskId}`, {
                     method: 'PUT',
                     headers: {
@@ -88,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("Stoptime").value = "";
                 document.getElementById("priority").value = "";
                 alert("Task is successfully " + (!editedTaskId ? "created" : "updated"));
+                //fetchTasks();
             } else {
                 alert("Error " + (!editedTaskId ? "creating" : "updating") + " task");
             }
@@ -99,3 +101,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+async function fetchTasks() {
+    try {
+        console.log("Inside fetchTasks function")
+        alert("Inside fetchTasks function")
+        // Fetch tasks from the server
+        const response = await fetch('http://localhost:3000/get-tasks');
+        const tasks = await response.json();
+
+        const taskTableBody = document.querySelector("#task-table tbody");
+        
+        tasks.forEach(task => {
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${task.taskName}</td>
+                <td>${task.startTime}</td>
+                <td>${task.endTime}</td>
+                <td>${task.priority}</td>
+                
+                <td><button class="edit-button" data-task-id="${task._id}">Edit</button></td>
+            `;
+            taskTableBody.appendChild(newRow);
+            // alert(task.taskName)
+            //     alert("Task fetched")
+        });
+
+    } catch (error) {
+        console.error('Error fetching tasks:', error);
+    }
+}
+
+

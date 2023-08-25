@@ -82,6 +82,7 @@ app.get('/get-tasks', async (req, res) => {
     try {
         const tasks = await Task.find();
         res.json(tasks);
+        console.log("All tasks retrived")
     } catch (error) {
         console.error('Error retrieving tasks:', error);
         res.status(500).json({ message: 'An error occurred while retrieving tasks' });
