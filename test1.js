@@ -8,7 +8,7 @@ document.querySelector(".popup .close-btn").addEventListener("click", function (
     document.querySelector(".popup").classList.remove("active");
     document.querySelector("#main-container").classList.remove("blurred");
 });
-
+let ght=1;
 document.addEventListener("DOMContentLoaded", function () {
     let editedTaskId = null;
 
@@ -89,7 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("Stoptime").value = "";
                 document.getElementById("priority").value = "";
                 alert("Task is successfully " + (!editedTaskId ? "created" : "updated"));
-                //fetchTasks();
+                if(ght==1){
+                    fetchTasks();
+                    ght=ght-1;
+                }
             } else {
                 alert("Error " + (!editedTaskId ? "creating" : "updating") + " task");
             }
